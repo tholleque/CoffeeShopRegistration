@@ -28,7 +28,18 @@ namespace CoffeeShopRegistration.Controllers
         }
         public IActionResult RegistrationResult(User result)
         {
-            return View(result);
+            if (result.Password.ToLower().Contains("password"))
+            {
+                return RedirectToAction("Failed");
+            }
+            else
+            {
+                return View(result);
+            }
+        }
+        public IActionResult Failed()
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

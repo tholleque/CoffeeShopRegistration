@@ -6,22 +6,35 @@
 
 <form asp-method="post" asp-action="RegistrationResult">
     <h2>Welcome to the Member Registration Page!</h2>
-    <p>First Name:</p>
-    <input type="text" name="FirstName" />
+    <label>First Name:</label>
+    <input type="text" name="FirstName" required />
 
-    <p>Last Name:</p>
-    <input type="text" name="LastName" />
+    <label>Last Name:</label>
+    <input type="text" name="LastName" required/>
 
-    <p>Email: </p>
-    <input type="email" name="Email" />
-    <br />
-    <p>Password: </p>
-    <p>Requirments:</p>
-    <ul>
-        <li>At least 8 charaters in length.</li>
-        <li>Must include 1 number and 1 special character.</li>
-    </ul>
-    <input type="password" name="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,}$" />
+    <label>Email: </label>
+    <input type="email" name="Email" required/>
+    <label>Password: </label>
+    <input type="password" name="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,}$" 
+    required title="At least 8 characters long and must contain 1 number and 1 special character."/>
+    
+    <p>What is your favorite coffee?</p>
+    <select name="Favorite">
+        <option>Black Coffee</option>
+        <option>Latte</option>
+        <option>Mocha</option>
+        <option>Peppermint Mocha</option>
+        <option>Frappe</option>
+    </select>
+
+    <p>Choice of Milk</p>
+    <p>Whole Milk</p>
+    <input type="radio" name="Milk" value="Whole Milk" checked />
+    <p>Oat Milk</p>
+    <input type="radio" name="Milk" value="Oat Milk" />
+    <p>Soy Milk</p>
+    <input type="radio" name="Milk" value="Soy Milk" />
+    
 
     <input type="submit" />
 </form>
